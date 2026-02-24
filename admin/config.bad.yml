@@ -1,0 +1,75 @@
+backend:
+  name: github
+  repo: viderboom/teatron-ende
+  branch: main
+  base_url: https://teatron-cms-auth.viderboom.workers.dev
+  auth_endpoint: auth
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "settings"
+    label: "הגדרות אתר"
+    files:
+      - label: "תוכן ראשי"
+        name: "site"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - { label: "שם העסק", name: "businessName", widget: "string" }
+          - { label: "שם האישה", name: "ownerName", widget: "string" }
+          - { label: "טלפון לתצוגה", name: "phoneDisplay", widget: "string" }
+          - { label: "טלפון בינלאומי ספרות בלבד", name: "phoneIntlDigits", widget: "string", hint: "לדוגמה: 972524329089" }
+          - { label: "אזור פעילות", name: "cityOrArea", widget: "string" }
+
+          - { label: "כותרת הירו", name: "heroTitle", widget: "string" }
+          - { label: "טקסט הירו", name: "heroText", widget: "text" }
+
+          - { label: "כותרת עליי (אופציונלי)", name: "aboutTitle", widget: "string", required: false }
+          - { label: "טקסט עליי (אופציונלי)", name: "aboutText", widget: "text", required: false }
+
+          - { label: "כותרת - מי אנחנו", name: "whoTitle", widget: "string" }
+          - { label: "תת כותרת - מי אנחנו", name: "whoSubtitle", widget: "string", required: false }
+          - { label: "טקסט - מי אנחנו (HTML פשוט)", name: "whoTextHtml", widget: "text" }
+
+          - { label: "כותרת - תיאטרון מותאם", name: "adaptedTitle", widget: "string" }
+          - { label: "תת כותרת - תיאטרון מותאם", name: "adaptedSubtitle", widget: "string", required: false }
+          - { label: "טקסט - תיאטרון מותאם (HTML פשוט)", name: "adaptedTextHtml", widget: "text" }
+
+          - { label: "כותרת וידאו (אופציונלי)", name: "videoTitle", widget: "string", required: false }
+          - { label: "טקסט וידאו (אופציונלי)", name: "videoText", widget: "text", required: false }
+          - { label: "YouTube ID (אופציונלי)", name: "youtubeId", widget: "string", required: false }
+
+          - { label: "כותרת צור קשר", name: "contactTitle", widget: "string" }
+          - { label: "טקסט צור קשר", name: "contactText", widget: "text" }
+
+          - { label: "תיאור SEO", name: "seoDescription", widget: "text" }
+
+          - { label: "להציג הודעה עליונה?", name: "announcementEnabled", widget: "boolean", default: false }
+          - { label: "טקסט הודעה", name: "announcementText", widget: "string", required: false }
+          - { label: "טקסט כפתור", name: "announcementButtonText", widget: "string", required: false }
+          - { label: "קישור לכפתור", name: "announcementLink", widget: "string", required: false }
+          - { label: "צבע הודעה", name: "announcementColor", widget: "select", options: ["coral","bluegreen","freesia","fuchsia"], default: "coral" }
+
+  - name: "shows"
+    label: "הצגות"
+    files:
+      - label: "רשימת הצגות"
+        name: "shows"
+        file: "content/shows.json"
+        format: "json"
+        fields:
+          - label: "הצגות"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "שם ההצגה", name: "title", widget: "string" }
+              - { label: "תיאור קצר", name: "short", widget: "text" }
+              - { label: "משך", name: "duration", widget: "string", required: false }
+              - { label: "מתאים ל", name: "audience", widget: "string", required: false }
+              - { label: "הערות/התאמות", name: "notes", widget: "text", required: false }
+              - { label: "תמונה (URL או נתיב שהועלה)", name: "image", widget: "string", required: false }

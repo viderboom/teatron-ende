@@ -12,64 +12,57 @@ publish_mode: editorial_workflow
 
 collections:
   - name: "settings"
-    label: "δβγψεϊ ΰϊψ"
+    label: "Χ”Χ’Χ“Χ¨Χ•Χª ΧΧªΧ¨"
     files:
-      - label: "ϊελο ψΰωι"
+      - label: "ΧªΧ•Χ›Χ Χ¨ΧΧ©Χ™"
         name: "site"
         file: "content/site.json"
         format: "json"
         fields:
-          - { label: "ων δςρχ", name: "businessName", widget: "string" }
-          - { label: "ων δΰιωδ", name: "ownerName", widget: "string" }
-          - { label: "θμτεο μϊφεβδ", name: "phoneDisplay", widget: "string" }
-          - { label: "θμτεο αιπμΰεξι ρτψεϊ αμαγ", name: "phoneIntlDigits", widget: "string", hint: "μγεβξδ: 972524329089" }
-          - { label: "ΰζεψ τςιμεϊ", name: "cityOrArea", widget: "string" }
+          - { label: "Χ©Χ Χ”ΧΆΧ΅Χ§", name: "businessName", widget: "string" }
+          - { label: "Χ©Χ Χ”ΧΧ™Χ©Χ”", name: "ownerName", widget: "string" }
+          - { label: "ΧΧΧ¤Χ•Χ ΧΧªΧ¦Χ•Χ’Χ”", name: "phoneDisplay", widget: "string" }
+          - { label: "ΧΧΧ¤Χ•Χ Χ‘Χ™Χ ΧΧΧ•ΧΧ™ Χ΅Χ¤Χ¨Χ•Χª Χ‘ΧΧ‘Χ“", name: "phoneIntlDigits", widget: "string", hint: "ΧΧ“Χ•Χ’ΧΧ”: 972524329089" }
+          - { label: "ΧΧ–Χ•Χ¨ Χ¤ΧΆΧ™ΧΧ•Χª", name: "cityOrArea", widget: "string" }
 
-          - { label: "λεϊψϊ διψε", name: "heroTitle", widget: "string" }
-          - { label: "θχρθ διψε", name: "heroText", widget: "text" }
+          - { label: "Χ›Χ•ΧªΧ¨Χª Χ”Χ™Χ¨Χ•", name: "heroTitle", widget: "string" }
+          - { label: "ΧΧ§Χ΅Χ Χ”Χ™Χ¨Χ•", name: "heroText", widget: "text" }
 
-          - { label: "λεϊψϊ ςμιι (ΰετφιεπμι)", name: "aboutTitle", widget: "string", required: false }
-          - { label: "θχρθ ςμιι (ΰετφιεπμι)", name: "aboutText", widget: "text", required: false }
+          - { label: "Χ›Χ•ΧªΧ¨Χª - ΧΧ™ ΧΧ Χ—Χ Χ•", name: "whoTitle", widget: "string" }
+          - { label: "ΧªΧª Χ›Χ•ΧªΧ¨Χª - ΧΧ™ ΧΧ Χ—Χ Χ•", name: "whoSubtitle", widget: "string", required: false }
+          - { label: "ΧΧ§Χ΅Χ - ΧΧ™ ΧΧ Χ—Χ Χ• (HTML Χ¤Χ©Χ•Χ)", name: "whoTextHtml", widget: "text" }
 
-          - { label: "λεϊψϊ - ξι ΰπηπε", name: "whoTitle", widget: "string" }
-          - { label: "ϊϊ λεϊψϊ - ξι ΰπηπε", name: "whoSubtitle", widget: "string", required: false }
-          - { label: "θχρθ - ξι ΰπηπε (HTML τωεθ)", name: "whoTextHtml", widget: "text" }
+          - { label: "Χ›Χ•ΧªΧ¨Χª - ΧªΧ™ΧΧΧ¨Χ•Χ ΧΧ•ΧªΧΧ", name: "adaptedTitle", widget: "string" }
+          - { label: "ΧªΧª Χ›Χ•ΧªΧ¨Χª - ΧªΧ™ΧΧΧ¨Χ•Χ ΧΧ•ΧªΧΧ", name: "adaptedSubtitle", widget: "string", required: false }
+          - { label: "ΧΧ§Χ΅Χ - ΧªΧ™ΧΧΧ¨Χ•Χ ΧΧ•ΧªΧΧ (HTML Χ¤Χ©Χ•Χ)", name: "adaptedTextHtml", widget: "text" }
 
-          - { label: "λεϊψϊ - ϊιΰθψεο ξεϊΰν", name: "adaptedTitle", widget: "string" }
-          - { label: "ϊϊ λεϊψϊ - ϊιΰθψεο ξεϊΰν", name: "adaptedSubtitle", widget: "string", required: false }
-          - { label: "θχρθ - ϊιΰθψεο ξεϊΰν (HTML τωεθ)", name: "adaptedTextHtml", widget: "text" }
+          - { label: "Χ›Χ•ΧªΧ¨Χª Χ¦Χ•Χ¨ Χ§Χ©Χ¨", name: "contactTitle", widget: "string" }
+          - { label: "ΧΧ§Χ΅Χ Χ¦Χ•Χ¨ Χ§Χ©Χ¨", name: "contactText", widget: "text" }
 
-          - { label: "λεϊψϊ ειγΰε (ΰετφιεπμι)", name: "videoTitle", widget: "string", required: false }
-          - { label: "θχρθ ειγΰε (ΰετφιεπμι)", name: "videoText", widget: "text", required: false }
-          - { label: "YouTube ID (ΰετφιεπμι)", name: "youtubeId", widget: "string", required: false }
+          - { label: "ΧªΧ™ΧΧ•Χ¨ SEO", name: "seoDescription", widget: "text" }
 
-          - { label: "λεϊψϊ φεψ χωψ", name: "contactTitle", widget: "string" }
-          - { label: "θχρθ φεψ χωψ", name: "contactText", widget: "text" }
-
-          - { label: "ϊιΰεψ SEO", name: "seoDescription", widget: "text" }
-
-          - { label: "μδφιβ δεγςδ ςμιεπδ?", name: "announcementEnabled", widget: "boolean", default: false }
-          - { label: "θχρθ δεγςδ", name: "announcementText", widget: "string", required: false }
-          - { label: "θχρθ λτϊεψ", name: "announcementButtonText", widget: "string", required: false }
-          - { label: "χιωεψ μλτϊεψ", name: "announcementLink", widget: "string", required: false }
-          - { label: "φας δεγςδ", name: "announcementColor", widget: "select", options: ["coral","bluegreen","freesia","fuchsia"], default: "coral" }
+          - { label: "ΧΧ”Χ¦Χ™Χ’ Χ”Χ•Χ“ΧΆΧ” ΧΆΧΧ™Χ•Χ Χ”?", name: "announcementEnabled", widget: "boolean", default: false }
+          - { label: "ΧΧ§Χ΅Χ Χ”Χ•Χ“ΧΆΧ”", name: "announcementText", widget: "string", required: false }
+          - { label: "ΧΧ§Χ΅Χ Χ›Χ¤ΧªΧ•Χ¨", name: "announcementButtonText", widget: "string", required: false }
+          - { label: "Χ§Χ™Χ©Χ•Χ¨ ΧΧ›Χ¤ΧªΧ•Χ¨", name: "announcementLink", widget: "string", required: false }
+          - { label: "Χ¦Χ‘ΧΆ Χ”Χ•Χ“ΧΆΧ”", name: "announcementColor", widget: "select", options: ["coral","bluegreen","freesia","fuchsia"], default: "coral" }
 
   - name: "shows"
-    label: "δφβεϊ"
+    label: "Χ”Χ¦Χ’Χ•Χª"
     files:
-      - label: "ψωιξϊ δφβεϊ"
+      - label: "Χ¨Χ©Χ™ΧΧª Χ”Χ¦Χ’Χ•Χª"
         name: "shows"
         file: "content/shows.json"
         format: "json"
         fields:
-          - label: "δφβεϊ"
+          - label: "Χ”Χ¦Χ’Χ•Χª"
             name: "items"
             widget: "list"
             summary: "{{fields.title}}"
             fields:
-              - { label: "ων δδφβδ", name: "title", widget: "string" }
-              - { label: "ϊιΰεψ χφψ", name: "short", widget: "text" }
-              - { label: "ξωκ", name: "duration", widget: "string", required: false }
-              - { label: "ξϊΰιν μ", name: "audience", widget: "string", required: false }
-              - { label: "δςψεϊ/δϊΰξεϊ", name: "notes", widget: "text", required: false }
-              - { label: "ϊξεπδ (URL ΰε πϊια ωδεςμδ)", name: "image", widget: "string", required: false }
+              - { label: "Χ©Χ Χ”Χ”Χ¦Χ’Χ”", name: "title", widget: "string" }
+              - { label: "ΧªΧ™ΧΧ•Χ¨ Χ§Χ¦Χ¨", name: "short", widget: "text" }
+              - { label: "ΧΧ©Χ", name: "duration", widget: "string", required: false }
+              - { label: "ΧΧªΧΧ™Χ Χ", name: "audience", widget: "string", required: false }
+              - { label: "Χ”ΧΆΧ¨Χ•Χª/Χ”ΧªΧΧΧ•Χª", name: "notes", widget: "text", required: false }
+              - { label: "ΧªΧΧ•Χ Χ” (URL ΧΧ• Χ ΧªΧ™Χ‘)", name: "image", widget: "string", required: false }
