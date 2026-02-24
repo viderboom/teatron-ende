@@ -1,0 +1,84 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
+  branch: main
+
+  # חובה בשביל כניסה מאובטחת דרך GitHub OAuth:
+  base_url: https://YOUR-OAUTH-SERVICE.example.com
+  auth_endpoint: auth
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "settings"
+    label: "הגדרות אתר"
+    files:
+      - label: "תוכן ראשי"
+        name: "site"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - { label: "שם העסק", name: "businessName", widget: "string" }
+          - { label: "שם האישה", name: "ownerName", widget: "string" }
+          - { label: "טלפון לתצוגה", name: "phoneDisplay", widget: "string" }
+          - { label: "טלפון בינלאומי ספרות בלבד", name: "phoneIntlDigits", widget: "string", hint: "לדוגמה: 972524329089" }
+          - { label: "אזור פעילות", name: "cityOrArea", widget: "string" }
+
+          - { label: "כותרת הירו", name: "heroTitle", widget: "string" }
+          - { label: "טקסט הירו", name: "heroText", widget: "text" }
+
+          # אם נשאר אצלך שדות ישנים על "עליי" — אפשר להשאיר, אבל אם עברנו ל-"מי אנחנו" מומלץ להסיר/לא להשתמש
+          - { label: "כותרת עליי", name: "aboutTitle", widget: "string", required: false }
+          - { label: "טקסט עליי", name: "aboutText", widget: "text", required: false }
+
+          # מי אנחנו (תיאטרון אנדי)
+          - { label: "כותרת - מי אנחנו", name: "whoTitle", widget: "string" }
+          - { label: "תת כותרת - מי אנחנו", name: "whoSubtitle", widget: "string", required: false }
+          - { label: "טקסט - מי אנחנו (HTML פשוט)", name: "whoTextHtml", widget: "text" }
+
+          # תיאטרון מותאם (SEO)
+          - { label: "כותרת - תיאטרון מותאם", name: "adaptedTitle", widget: "string" }
+          - { label: "תת כותרת - תיאטרון מותאם", name: "adaptedSubtitle", widget: "string", required: false }
+          - { label: "טקסט - תיאטרון מותאם (HTML פשוט)", name: "adaptedTextHtml", widget: "text" }
+
+          # וידאו (אם עדיין יש סקשן כזה בעמוד)
+          - { label: "כותרת וידאו", name: "videoTitle", widget: "string", required: false }
+          - { label: "טקסט וידאו", name: "videoText", widget: "text", required: false }
+          - { label: "YouTube ID", name: "youtubeId", widget: "string", required: false }
+
+          # צור קשר / "אני רק שאלה"
+          - { label: "כותרת צור קשר", name: "contactTitle", widget: "string" }
+          - { label: "טקסט צור קשר", name: "contactText", widget: "text" }
+
+          # SEO
+          - { label: "תיאור SEO", name: "seoDescription", widget: "text" }
+
+          # Announcement
+          - { label: "להציג הודעה עליונה?", name: "announcementEnabled", widget: "boolean", default: false }
+          - { label: "טקסט הודעה", name: "announcementText", widget: "string", required: false }
+          - { label: "טקסט כפתור", name: "announcementButtonText", widget: "string", required: false }
+          - { label: "קישור לכפתור", name: "announcementLink", widget: "string", required: false }
+          - { label: "צבע הודעה", name: "announcementColor", widget: "select", options: ["coral","bluegreen","freesia","fuchsia"], default: "coral" }
+
+  - name: "shows"
+    label: "הצגות"
+    files:
+      - label: "רשימת הצגות"
+        name: "shows"
+        file: "content/shows.json"
+        format: "json"
+        fields:
+          - label: "הצגות"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "שם ההצגה", name: "title", widget: "string" }
+              - { label: "תיאור קצר", name: "short", widget: "text" }
+              - { label: "משך", name: "duration", widget: "string", required: false }
+              - { label: "מתאים ל", name: "audience", widget: "string", required: false }
+              - { label: "הערות/התאמות", name: "notes", widget: "text", required: false }
+              - { label: "תמונה", name: "image", widget: "string", required: false, hint: "אפשר לשים URL או להעלות לקובץ ואז לשים את הנתיב" }

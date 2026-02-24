@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+		<title>תיאטרון אנדי</title>
+		<meta name="description" content="" id="metaDesc" />
+		<meta name="robots" content="index,follow" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&display=swap"
+			rel="stylesheet" />
+
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+
+	<body>
+		<div id="announcementBar" class="announcement hidden" role="region" aria-label="הודעה חשובה">
+			<div class="container announcement-inner">
+				<div class="announcement-text" id="announcementText"></div>
+				<a id="announcementLink" class="announcement-btn" target="_blank" rel="noopener"></a>
+			</div>
+		</div>
+		<header class="topbar" id="top">
+			<div class="container topbar-inner">
+				<div class="brand">
+					<a href="#top" class="logo-link" aria-label="חזרה לראש הדף">
+  <div class="logo">
+    <img src="assets/logo.png" alt="תיאטרון אנדי">
+  </div>
+</a>
+					<div class="brand-text">
+						<div class="brand-name" id="businessName">תיאטרון אנדי</div>
+						<div class="brand-sub" id="ownerName">חמוטל אנדי</div>
+					</div>
+				</div>
+
+				<nav class="nav" aria-label="תפריט ראשי">
+  <a href="#who">תיאטרון אנדי</a>
+  <a href="#shows">הצגות</a>
+  <a href="#adapted">תיאטרון מותאם</a>
+  <a href="#contact">אני רק שאלה</a>
+</nav>
+
+				<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
+					<span class="sr-only">פתיחת תפריט</span>
+					☰
+				</button>
+			</div>
+
+			<div id="mobileMenu" class="mobile-menu" hidden>
+  <a href="#who">תיאטרון אנדי</a>
+  <a href="#shows">הצגות</a>
+  <a href="#adapted">תיאטרון מותאם</a>
+  <a href="#contact">אני רק שאלה</a>
+</div>
+		</header>
+
+		<main>
+			<section class="hero">
+				<div class="container hero-inner">
+					<div class="hero-copy">
+						<h1 id="heroTitle"></h1>
+						<p class="lead" id="heroText"></p>
+
+						<div class="hero-actions">
+							<a class="btn btn-primary" href="#shows">לראות הצגות</a>
+							<a class="btn btn-outline" href="#contact">לבדוק התאמה למסגרת</a>
+						</div>
+
+						<div class="chips">
+							<span class="chip">חינוך מיוחד</span>
+							<span class="chip">מרכזי יום</span>
+							<span class="chip">דיור בקהילה</span>
+							<span class="chip">בתי חולים</span>
+						</div>
+					</div>
+
+					<div class="hero-card">
+						<div class="hero-card-title">גישה רגישה, בקצב של הקבוצה</div>
+						<ul class="hero-list">
+							<li>התאמות לרעש/אור/מגע</li>
+							<li>אפשרות לקבוצות קטנות</li>
+							<li>שפה נגישה ולא מתיילדת</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="section" id="who">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="whoTitle">תיאטרון אנדי</h2>
+      <p class="muted" id="whoSubtitle">מי אנחנו, ואיך נראה מפגש טוב במסגרות.</p>
+    </div>
+
+    <div class="card">
+      <div id="whoText"></div>
+    </div>
+  </div>
+</section>
+
+			<section class="section alt" id="shows">
+				<div class="container">
+					<div class="section-head">
+						<h2>הצגות ושעת סיפור</h2>
+						<p class="muted">אפשר להתאים אורך, קצב, עוצמת קול ורמת אינטראקציה.</p>
+					</div>
+
+					<div class="grid" id="showsGrid" aria-live="polite"></div>
+				</div>
+			</section>
+
+			<section class="section" id="video">
+				<div class="container">
+					<div class="section-head">
+						<h2 id="videoTitle">הצגות</h2>
+      <p class="muted">כל הצגה יכולה לעבור התאמות: אורך, קצב, עוצמת קול ורמת אינטראקציה.</p>
+		    <div class="grid" id="showsGrid" aria-live="polite"></div>
+			
+    </div>
+
+					<div class="card video">
+						<div class="video-wrap">
+							<iframe
+								id="ytFrame"
+								title="וידאו תיאטרון אנדי"
+								loading="lazy"
+								allow="
+									accelerometer;
+									autoplay;
+									clipboard-write;
+									encrypted-media;
+									gyroscope;
+									picture-in-picture;
+									web-share;
+								"
+								allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+
+<section class="section" id="adapted">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="adaptedTitle">תיאטרון מותאם</h2>
+      <p class="muted" id="adaptedSubtitle">מילים פשוטות על התאמה, נגישות ומה חשוב לדעת.</p>
+    </div>
+
+    <div class="card">
+      <div id="adaptedText"></div>
+    </div>
+  </div>
+</section>
+
+
+			<section class="section alt" id="contact">
+				<div class="container">
+					<div class="section-head">
+						<h2 id="contactTitle">אני רק שאלה</h2>
+                  <p class="muted" id="contactText"></p>אפשר להתייעץ, לבדוק התאמה, או לשאול על תאריך פנוי.</p>
+
+					</div>
+
+					<div class="grid two">
+						<form class="card form" id="contactForm">
+							<label
+								>שם
+								<input name="name" required placeholder="איך קוראים לך?" />
+							</label>
+
+							<label
+								>טלפון
+								<input name="phone" required placeholder="050-0000000" />
+							</label>
+
+							<label
+								>סוג מסגרת
+								<select name="framework" required>
+									<option value="" selected disabled>לבחור…</option>
+									<option>גן/בית ספר לחינוך מיוחד</option>
+									<option>מרכז יום / שיקום</option>
+									<option>דיור בקהילה / הוסטל</option>
+									<option>בית חולים / מחלקה</option>
+									<option>אחר</option>
+								</select>
+							</label>
+
+							<label
+								>כמה מילים על הקבוצה
+								<textarea
+									name="message"
+									rows="5"
+									required
+									placeholder="גילאים? מספר משתתפים? רגישויות (רעש/אור/מגע)? מטרת המפגש?"></textarea>
+							</label>
+
+							<button class="btn btn-primary" type="submit">לשלוח בוואטסאפ</button>
+							<p class="muted small" id="formHint" aria-live="polite"></p>
+						</form>
+
+						<aside class="card">
+							<h3>פרטים</h3>
+							<div class="kv">
+								<div class="k">טלפון</div>
+								<div class="v"><a id="telLink" class="ltr"></a></div>
+
+								<div class="k">וואטסאפ</div>
+								<div class="v"><a id="waLink" target="_blank" rel="noopener">פתיחת שיחה</a></div>
+
+								<div class="k">אזור פעילות</div>
+								<div class="v" id="area"></div>
+							</div>
+							<a class="btn btn-outline" href="/admin/">כניסה לניהול תוכן</a>
+						</aside>
+					</div>
+				</div>
+			</section>
+
+			<footer class="footer">
+				<div class="container footer-inner">
+					<span>© <span id="year"></span> <span id="footerName">תיאטרון אנדי</span></span>
+				</div>
+			</footer>
+
+			<a class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="פתיחת וואטסאפ"
+				>💬</a
+			>
+		</main>
+
+		<script src="app.js"></script>
+	</body>
+</html>
