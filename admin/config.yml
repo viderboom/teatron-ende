@@ -12,47 +12,47 @@ publish_mode: editorial_workflow
 
 collections:
   - name: "settings"
-    label: "הגדרות אתר"
+    label: "הגדרות םתר"
     files:
-      - label: "תוכן ראשי"
+      - label: "תוכן רםשי"
         name: "site"
         file: "content/site.json"
         format: "json"
         fields:
           - { label: "שם העסק", name: "businessName", widget: "string" }
-          - { label: "שם האישה", name: "ownerName", widget: "string" }
+          - { label: "שם הםישה", name: "ownerName", widget: "string" }
           - { label: "טלפון לתצוגה", name: "phoneDisplay", widget: "string" }
-          - { label: "טלפון בינלאומי ספרות בלבד", name: "phoneIntlDigits", widget: "string", hint: "לדוגמה: 972524329089" }
-          - { label: "אזור פעילות", name: "cityOrArea", widget: "string" }
+          - { label: "טלפון בינלםומי ספרות בלבד", name: "phoneIntlDigits", widget: "string", hint: "לדוגמה: 972524329089" }
+          - { label: "םזור פעילות", name: "cityOrArea", widget: "string" }
 
           - { label: "כותרת הירו", name: "heroTitle", widget: "string" }
           - { label: "טקסט הירו", name: "heroText", widget: "text" }
 
-          # אם נשאר אצלך שדות ישנים על "עליי" — אפשר להשאיר, אבל אם עברנו ל-"מי אנחנו" מומלץ להסיר/לא להשתמש
+          # םם נשםר םצלך שדות ישנים על "עליי" — םפשר להשםיר, םבל םם עברנו ל-"מי םנחנו" מומלץ להסיר/לם להשתמש
           - { label: "כותרת עליי", name: "aboutTitle", widget: "string", required: false }
           - { label: "טקסט עליי", name: "aboutText", widget: "text", required: false }
 
-          # מי אנחנו (תיאטרון אנדי)
-          - { label: "כותרת - מי אנחנו", name: "whoTitle", widget: "string" }
-          - { label: "תת כותרת - מי אנחנו", name: "whoSubtitle", widget: "string", required: false }
-          - { label: "טקסט - מי אנחנו (HTML פשוט)", name: "whoTextHtml", widget: "text" }
+          # מי םנחנו (תיםטרון םנדי)
+          - { label: "כותרת - מי םנחנו", name: "whoTitle", widget: "string" }
+          - { label: "תת כותרת - מי םנחנו", name: "whoSubtitle", widget: "string", required: false }
+          - { label: "טקסט - מי םנחנו (HTML פשוט)", name: "whoTextHtml", widget: "text" }
 
-          # תיאטרון מותאם (SEO)
-          - { label: "כותרת - תיאטרון מותאם", name: "adaptedTitle", widget: "string" }
-          - { label: "תת כותרת - תיאטרון מותאם", name: "adaptedSubtitle", widget: "string", required: false }
-          - { label: "טקסט - תיאטרון מותאם (HTML פשוט)", name: "adaptedTextHtml", widget: "text" }
+          # תיםטרון מותםם (SEO)
+          - { label: "כותרת - תיםטרון מותםם", name: "adaptedTitle", widget: "string" }
+          - { label: "תת כותרת - תיםטרון מותםם", name: "adaptedSubtitle", widget: "string", required: false }
+          - { label: "טקסט - תיםטרון מותםם (HTML פשוט)", name: "adaptedTextHtml", widget: "text" }
 
-          # וידאו (אם עדיין יש סקשן כזה בעמוד)
-          - { label: "כותרת וידאו", name: "videoTitle", widget: "string", required: false }
-          - { label: "טקסט וידאו", name: "videoText", widget: "text", required: false }
+          # וידםו (םם עדיין יש סקשן כזה בעמוד)
+          - { label: "כותרת וידםו", name: "videoTitle", widget: "string", required: false }
+          - { label: "טקסט וידםו", name: "videoText", widget: "text", required: false }
           - { label: "YouTube ID", name: "youtubeId", widget: "string", required: false }
 
-          # צור קשר / "אני רק שאלה"
+          # צור קשר / "םני רק שםלה"
           - { label: "כותרת צור קשר", name: "contactTitle", widget: "string" }
           - { label: "טקסט צור קשר", name: "contactText", widget: "text" }
 
           # SEO
-          - { label: "תיאור SEO", name: "seoDescription", widget: "text" }
+          - { label: "תיםור SEO", name: "seoDescription", widget: "text" }
 
           # Announcement
           - { label: "להציג הודעה עליונה?", name: "announcementEnabled", widget: "boolean", default: false }
@@ -75,8 +75,8 @@ collections:
             summary: "{{fields.title}}"
             fields:
               - { label: "שם ההצגה", name: "title", widget: "string" }
-              - { label: "תיאור קצר", name: "short", widget: "text" }
+              - { label: "תיםור קצר", name: "short", widget: "text" }
               - { label: "משך", name: "duration", widget: "string", required: false }
-              - { label: "מתאים ל", name: "audience", widget: "string", required: false }
-              - { label: "הערות/התאמות", name: "notes", widget: "text", required: false }
-              - { label: "תמונה", name: "image", widget: "string", required: false, hint: "אפשר לשים URL או להעלות לקובץ ואז לשים את הנתיב" }
+              - { label: "מתםים ל", name: "audience", widget: "string", required: false }
+              - { label: "הערות/התםמות", name: "notes", widget: "text", required: false }
+              - { label: "תמונה", name: "image", widget: "string", required: false, hint: "םפשר לשים URL םו להעלות לקובץ וםז לשים םת הנתיב" }
