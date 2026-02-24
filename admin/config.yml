@@ -1,10 +1,8 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
+  repo: viderboom/teatron-ende
   branch: main
-
-  # חובה בשביל כניסה מאובטחת דרך GitHub OAuth:
-  base_url: https://YOUR-OAUTH-SERVICE.example.com
+  base_url: https://teatron-cms-auth.viderboom.workers.dev
   auth_endpoint: auth
 
 media_folder: "uploads"
