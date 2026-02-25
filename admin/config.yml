@@ -63,4 +63,3 @@ collections:
               - { label: "שם ההצגה", name: "title", widget: "string" }
               - { label: "תיאור קצר", name: "short", widget: "text" }
               - { label: "תמונה", name: "image", widget: "image", required: false }
-  - 
