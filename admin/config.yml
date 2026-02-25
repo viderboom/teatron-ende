@@ -8,8 +8,6 @@ backend:
 media_folder: "uploads"
 public_folder: "/uploads"
 
-publish_mode: editorial_workflow
-
 collections:
   - name: "settings"
     label: "הגדרות אתר"
@@ -46,15 +44,17 @@ collections:
           - { label: "טקסט כפתור", name: "announcementButtonText", widget: "string", required: false }
           - { label: "קישור לכפתור", name: "announcementLink", widget: "string", required: false }
           - { label: "צבע הודעה", name: "announcementColor", widget: "select", options: ["coral","bluegreen","freesia","fuchsia"], default: "coral" }
-
   - name: "shows"
     label: "הצגות"
     files:
-      - label: "רשימת הצגות"
+      - label: "תוכן סקשן הצגות"
         name: "shows"
         file: "content/shows.json"
         format: "json"
         fields:
+          - { label: "כותרת פתיחה", name: "introTitle", widget: "string" }
+          - { label: "פסקת פתיחה", name: "introText", widget: "text" }
+          - { label: "תמונה ראשית", name: "heroImage", widget: "image", required: false }
           - label: "הצגות"
             name: "items"
             widget: "list"
@@ -62,7 +62,5 @@ collections:
             fields:
               - { label: "שם ההצגה", name: "title", widget: "string" }
               - { label: "תיאור קצר", name: "short", widget: "text" }
-              - { label: "משך", name: "duration", widget: "string", required: false }
-              - { label: "מתאים ל", name: "audience", widget: "string", required: false }
-              - { label: "הערות/התאמות", name: "notes", widget: "text", required: false }
-              - { label: "תמונה (URL או נתיב)", name: "image", widget: "string", required: false }
+              - { label: "תמונה", name: "image", widget: "image", required: false }
+  - 

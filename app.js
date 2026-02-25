@@ -15,47 +15,78 @@ async function loadJson(url) {
 	return res.json()
 }
 
-function renderShows(shows) {
+function renderShows(showsData) {
+	// Elements
 	const grid = $('showsGrid')
 	if (!grid) return
+
+	const introTitleEl = $('showsIntroTitle')
+	const introTextEl = $('showsIntroText')
+	const heroWrapEl = $('showsHeroWrap')
+	const heroImgEl = $('showsHeroImg')
+
+	// Clear existing cards
 	grid.innerHTML = ''
 
-	;(shows || []).forEach(s => {
+	// Defensive normalize
+	const introTitle = showsData?.introTitle ?? 'הצגות'
+	const introText = showsData?.introText ?? ''
+	const heroImage = showsData?.heroImage ?? ''
+	const items = Array.isArray(showsData?.items) ? showsData.items : []
+
+	// Render intro
+	if (introTitleEl) introTitleEl.textContent = introTitle
+	if (introTextEl) introTextEl.textContent = introText
+
+	// Render hero image (show/hide wrapper)
+	if (heroImgEl && heroWrapEl) {
+		if (heroImage && String(heroImage).trim()) {
+			heroImgEl.src = heroImage
+			heroImgEl.alt = introTitle ? `תמונה ראשית: ${introTitle}` : 'תמונה ראשית של ההצגות'
+			heroWrapEl.hidden = false
+		} else {
+			heroImgEl.removeAttribute('src')
+			heroWrapEl.hidden = true
+		}
+	}
+
+	// Render show cards
+	items.forEach(s => {
+		const title = s?.title ?? ''
+		const short = s?.short ?? ''
+		const image = s?.image ?? ''
+
 		const card = document.createElement('article')
 		card.className = 'card show'
 
-		const media = document.createElement('div')
-		media.className = 'show-media'
+		// Image (optional)
+		if (image && String(image).trim()) {
+			const media = document.createElement('div')
+			media.className = 'show-media'
 
-		const img = document.createElement('img')
-		img.src = s.image || ''
-		img.alt = `תמונה מתוך: ${s.title || 'הצגה'}`
-		img.loading = 'lazy'
+			const img = document.createElement('img')
+			img.src = image
+			img.alt = title ? `תמונה מתוך: ${title}` : 'תמונה מתוך הצגה'
+			img.loading = 'lazy'
 
-		media.appendChild(img)
+			media.appendChild(img)
+			card.appendChild(media)
+		}
 
 		const h3 = document.createElement('h3')
-		h3.textContent = s.title || ''
-
-		const p = document.createElement('p')
-		p.textContent = s.short || ''
-
-		const meta = document.createElement('div')
-		meta.className = 'meta'
-		meta.innerHTML = `
-      <div><b>משך:</b> ${s.duration || '—'}</div>
-      <div><b>מתאים ל:</b> ${s.audience || '—'}</div>
-      <div><b>הערות:</b> ${s.notes || '—'}</div>
-    `
-
-		card.appendChild(media)
+		h3.textContent = title
 		card.appendChild(h3)
-		card.appendChild(p)
-		card.appendChild(meta)
+
+		if (short && String(short).trim()) {
+			const p = document.createElement('p')
+			p.textContent = short
+			card.appendChild(p)
+		}
 
 		grid.appendChild(card)
 	})
-}
+}ה
+
 // Mobile menu toggle
 document.addEventListener('click', e => {
 	const toggle = document.querySelector('.nav-toggle')
@@ -161,7 +192,7 @@ document.addEventListener('click', e => {
 		telLink.href = `tel:+${phoneDigits}`
 
 		// Shows
-		renderShows(shows.items || shows)
+		renderShows(shows)
 
 		// Contact form -> WhatsApp
 		const form = $('contactForm')
